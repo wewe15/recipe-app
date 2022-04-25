@@ -34,10 +34,10 @@ export class IngredientModel {
             const conn = await client.connect()
             const result = await conn
                 .query(sql, [i.name])
-            const user = result.rows[0]
+            const ingredient = result.rows[0]
             conn.release()
 
-            return user
+            return ingredient
         } catch (err) {
             throw new Error(`Could not add new ingredient ${i.name}. Error: ${err}`)
         }
@@ -63,10 +63,10 @@ export class IngredientModel {
             const sql = 'DELETE FROM ingredients WHERE id=$1 RETURNING *'
             const conn = await client.connect()
             const result = await conn.query(sql, [id])
-            const user = result.rows[0]
+            const ingredient = result.rows[0]
             conn.release()
         
-            return user
+            return ingredient
         } catch (err) {
             throw new Error(`Could not delete ingredient ${id}. Error: ${err}`)
         }
