@@ -1,20 +1,32 @@
 import React, {useState, useEffect} from "react";
-import { fetchRecipes } from "../api/index.js";
+import { fetchRecipes, deleteRecipes } from "../api/index.js";
+import Recipe from "./Recipe.jsx";
 
 
 function App() {
-  const [recipes, setRecipes] = useState("")
+  const [recipes, setRecipes] = useState([])
 
   useEffect(() => {
     fetchRecipes().then((res) => {
-      setRecipes(res || 'No recipes found.')
+      setRecipes(res.data || 'No recipes found.')
     });
   }, [])
   return (
     <div>
-        <pre>
-          {recipes}
-        </pre>
+     <header>Recipe App</header>
+      {
+        recipes.map(recipe => {
+          return (
+            <Recipe
+              key={recipe.id}
+              title={recipe.title}
+              ingredient={recipe.ingredient_id}
+              image={recipe.image}
+              deleteRecipe={() => deleteRecipes(recipe.id)}
+            />
+          );
+        })
+      }
     </div>
   );
 }
