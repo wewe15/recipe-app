@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
-import { fetchRecipes, deleteRecipes } from "../api/index.js";
+import { fetchRecipes, deleteRecipes,  } from "../api/index.js";
 import Recipe from "./Recipe.jsx";
+import AddForm from "./AddForm.jsx";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <div>
      <header>Recipe App</header>
+     <AddForm/>
       {
         recipes.map(recipe => {
           return (

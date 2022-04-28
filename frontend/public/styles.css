@@ -66,7 +66,7 @@ footer p {
     height: 200px;
 }
   
-form.create-note {
+form.create-recipe {
     position: relative;
     width: 480px;
     margin: 30px auto 20px auto;
@@ -76,8 +76,7 @@ form.create-note {
     box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
 
-form.create-note input,
-form.create-note textarea {
+form.create-recipe input {
     width: 100%;
     border: none;
     padding: 4px;
@@ -87,7 +86,7 @@ form.create-note textarea {
     resize: none;
 }
 
-form.create-note button {
+form.create-recipe button {
     position: absolute;
     right: 18px;
     bottom: -18px;
