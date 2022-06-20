@@ -1,36 +1,23 @@
-import React, {useState, useEffect} from "react";
-import { fetchRecipes, deleteRecipes,  } from "../api/index.js";
-import Recipe from "./Recipe.jsx";
-import AddForm from "./AddForm.jsx";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import  Header  from './Header';
+import  Footer  from './Footer';
+import  Home  from './Home';
+import AddForm from './AddForm';
 
 
-function App() {
-  const [recipes, setRecipes] = useState([])
-
-  useEffect(() => {
-    fetchRecipes().then((res) => {
-      setRecipes(res.data || 'No recipes found.')
-    });
-  }, [])
-  return (
-    <div>
-     <header>Recipe App</header>
-     <AddForm/>
-      {
-        recipes.map(recipe => {
-          return (
-            <Recipe
-              key={recipe.id}
-              title={recipe.title}
-              ingredient={recipe.ingredient_id}
-              image={recipe.image}
-              deleteRecipe={() => deleteRecipes(recipe.id)}
-            />
-          );
-        })
-      }
-    </div>
-  );
+function App() {  
+  return (  
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/add-recipe" element={<AddForm />} />
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
+  )
 }
 
 export default App;

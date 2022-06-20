@@ -11,13 +11,6 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
     padding: 0 16px;
 }
-  
-header {
-    background-color: #f5ba13;
-    margin: auto -16px;
-    padding: 16px 32px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-}
 
 footer {
     position: absolute;
@@ -30,19 +23,72 @@ footer {
 footer p {
     color: #ccc;
 }
+
+/* navbar */
+.navbar {
+    height: 10vh;
+    background: #f5ba13;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar a {
+    color: whitesmoke;
+    text-decoration: none;
+    font-size: 2.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-items {
+    width: 65vw;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    padding: 6px 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s all ease-out;
+}
+  
+.nav-items a:hover {
+    background: tomato;
+}
+  
+.nav-items a span {
+    margin-left: 0.7rem;
+    font-size: 1.3rem;
+}
+
+/* end navbar*/
+
 .recipe-info {
     background: #fff;
     border-radius: 7px;
     box-shadow: 0 2px 5px #ccc;
     padding: 10px;
-    width: 260px;
+    width: 200px;
     margin: 16px;
     float: left;
 }
+
 .recipe-info h1 {
     font-size: 1.1em;
     margin-bottom: 6px;
 }
+
 .recipe-info p {
     font-size: 1.1em;
     margin-bottom: 10px;
@@ -52,7 +98,7 @@ footer p {
 .recipe-info button {
     position: relative;
     float: right;
-    margin-right: 10px;
+    margin-left: 10px;
     color: #f5ba13;
     border: none;
     width: 36px;
@@ -62,8 +108,14 @@ footer p {
 }
 
 .recipe-info img {
-    width: 200px;
+    border-radius: 50%;
+    max-width: 100%;
     height: 200px;
+    object-fit: cover;
+}
+
+.recipe-info img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
   
 form.create-recipe {
