@@ -73,7 +73,66 @@ footer p {
 }
 
 /* end navbar*/
+/* start sidebare */
+.sidebar-toggle {
+    width: 65vw;
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.sidebar-toggle-logo {
+    font-size: 2.3rem;
+    color: whitesmoke;
+    cursor: pointer;
+}
 
+.sidebar {
+    width: 16rem;
+    background: #f5ba13;
+    height: 90vh;
+    position: absolute;
+    top: 10vh;
+    left: -100%;
+    transition: 0.3s all ease-in-out;
+}
+  
+.sidebar.active {
+    left: 0;
+}
+  
+.sidebar-items {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.2s all ease-out;
+}
+  
+.sidebar-items a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 1rem;
+    width: 100%;
+    height: 3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s all ease-out;
+}
+  
+.sidebar-items a span {
+    margin-left: 1.5rem;
+    font-size: 1.4rem;
+}
+  
+.sidebar-items a:hover {
+    background: tomato;
+}
+/* end sidebar */
 .recipe-info {
     background: #fff;
     border-radius: 7px;
@@ -96,7 +155,6 @@ footer p {
     word-wrap: break-word;
 }
 .recipe-info button {
-    position: relative;
     float: right;
     margin-left: 10px;
     color: #f5ba13;
